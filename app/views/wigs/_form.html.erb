@@ -1,0 +1,35 @@
+<%= form_for(@wig) do |f| %>
+  <% if @wig.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@wig.errors.count, "error prohibio", 'errores prohibieron') %> tu peluca:</h2>
+
+      <ul>
+      <% @wig.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :color %> *<br />
+    <%= f.select :color, Wig::COLOR, :include_blank => true%>
+  </div>
+  <div class="field">
+    <%= f.label :size, 'Tamaño' %> *<br />
+    <%= f.select :size,  Wig::SIZE, :include_blank => true %>
+  </div>
+  <div class="field">
+    <%= f.label :style, 'Estilo' %><br />
+    <%= f.text_field :style %>
+  </div>
+  <div class="field">
+    <%= f.label :price, 'Precio' %> * <br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Crear Peluca' %>
+  </div>
+  
+<% end %>

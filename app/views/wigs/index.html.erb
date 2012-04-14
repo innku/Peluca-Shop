@@ -1,0 +1,29 @@
+<h1>Listing wigs</h1>
+
+<table>
+  <tr>
+    <th>Color</th>
+    <th>Size</th>
+    <th>Style</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @wigs.each do |wig| %>
+  <tr>
+    <td><%= wig.color %></td>
+    <td><%= wig.size %></td>
+    <td><%= wig.style %></td>
+    <td><%= wig.price %></td>
+    <td><%= link_to 'Show', wig %></td>
+    <td><%= link_to 'Edit', edit_wig_path(wig) %></td>
+    <td><%= link_to 'Destroy', wig, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Wig', new_wig_path %>

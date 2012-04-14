@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Color:</b>
+  <%= @wig.color %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%= @wig.size %>
+</p>
+
+<p>
+  <b>Style:</b>
+  <%= @wig.style %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @wig.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_wig_path(@wig) %> |
+<%= link_to 'Back', wigs_path %>

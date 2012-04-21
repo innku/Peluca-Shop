@@ -20,6 +20,12 @@
   <%= @wig.price %>
 </p>
 
+<p>
+  <b>Foto:</b>
+  <%= image_tag @wig.picture.url %>
+</p>
+
+<%= button_to "Añadir a carrito", cart_items_path(:wig_id => @wig.id), :id => "add_to_cart", :data_wig => @wig.id  %>
 
 <%= link_to 'Edit', edit_wig_path(@wig) %> |
 <%= link_to 'Back', wigs_path %>

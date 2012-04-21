@@ -7,8 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <% if current_user %>
+    Hola <%= current_user.email %>, <%= link_to "Salir", destroy_user_session_path, :method => :delete %>
+  <% else %>
+    <%= link_to "Sign in", new_user_session_path %>
+  <% end %>
+  <div id ="cart">
+    <%= render :partial => "carts/cart", :locals => {:cart => @cart} %>
+  </div>
+  <%= yield %>
 
 </body>
 </html>

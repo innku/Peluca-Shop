@@ -1,6 +1,13 @@
 Pelucashop::Application.routes.draw do
+  resources :cart_items
+
+  resources :carts
+
+  devise_for :users
+
   resources :wigs
 
+  root :to => "wigs#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

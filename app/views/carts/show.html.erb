@@ -1,0 +1,19 @@
+<table>
+  <tr>
+    <th>Descripción</th>
+    <th>Total</th>
+  </tr>
+  <% @cart.cart_items.each do |cart_item| %>
+    <tr>
+      <td><%= cart_item.quantity %> Peluca(s) <%= cart_item.wig.color %> <%= cart_item.wig.size %></td>
+      <td><%= cart_item.total_price %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td>Total a pagar</td>
+    <td><%= @cart.total_price %></td>
+  </tr>
+</table>
+
+<%= link_to 'Regresar a catálogo', root_path %> | 
+<%= button_to "Vaciar carrito", @cart, :method => :delete, :confirm => 'are you sure?'%>

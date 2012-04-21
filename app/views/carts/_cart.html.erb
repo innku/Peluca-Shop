@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <th>Descripción</th>
+    <th>Total</th>
+  </tr>
+    <%= render :partial => "cart_items/cart_item", :collection => cart.cart_items %>
+  <tr>
+    <td>Total a pagar</td>
+    <td><span id="total_a_pagar"><%= cart.total_price %></span></td>
+  </tr>
+</table>
+
+<%= link_to 'Regresar a catálogo', root_path %> | 
+<%= button_to "Vaciar carrito", cart, :method => :delete, :confirm => 'are you sure?'%>
+
